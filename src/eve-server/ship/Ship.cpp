@@ -249,7 +249,7 @@ void Ship::ValidateAddItem(EVEItemFlags flag, InventoryItemRef item, Client *c)
 	
 }
 
-PyObject *Ship::ShipGetInfo()
+PyDict *Ship::ShipGetInfo()
 {
     if( !LoadContents( m_factory ) )
     {

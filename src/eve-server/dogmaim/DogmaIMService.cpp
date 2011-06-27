@@ -121,7 +121,7 @@ PyResult DogmaIMBound::Handle_GetLocationInfo(PyCallArgs &call)
 PyResult DogmaIMBound::Handle_ShipGetInfo(PyCallArgs &call) {
 	//takes no arguments
 	
-	PyObject *result = call.client->GetShip()->ShipGetInfo();
+	PyDict *result = call.client->GetShip()->ShipGetInfo();
 	if(result == NULL) {
 		codelog(SERVICE__ERROR, "Unable to build ship info for ship %u", call.client->GetShipID());
 		return NULL;
@@ -149,7 +149,7 @@ PyResult DogmaIMBound::Handle_ItemGetInfo(PyCallArgs &call) {
 PyResult DogmaIMBound::Handle_CharGetInfo(PyCallArgs &call) {
 	//no arguments
 	
-	PyObject *result = call.client->GetChar()->CharGetInfo();
+	PyDict *result = call.client->GetChar()->CharGetInfo();
 	if(result == NULL) {
 		codelog(SERVICE__ERROR, "Unable to build char info for char %u", call.client->GetCharacterID());
 		return NULL;

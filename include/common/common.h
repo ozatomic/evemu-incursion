@@ -75,6 +75,7 @@
 //#   pragma warning( disable : 4251 )
 // 'function': was declared deprecated
 //#   pragma warning( disable : 4996 )
+#pragma	warning( disable : 4355 )
 
 #   define _CRT_SECURE_NO_WARNINGS                  1
 #   define _CRT_SECURE_NO_DEPRECATE                 1

@@ -201,7 +201,7 @@ public:
 	/*
 	 * Primary public packet builders:
 	 */
-	PyObject *ShipGetInfo();
+	PyDict *ShipGetInfo();
 
 	/*
 	 * Validates boarding ship

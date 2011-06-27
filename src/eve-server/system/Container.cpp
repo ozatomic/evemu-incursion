@@ -124,7 +124,7 @@ void CargoContainer::ValidateAddItem(EVEItemFlags flag, InventoryItemRef item, C
     }
 }
 
-PyObject *CargoContainer::CargoContainerGetInfo()
+PyDict *CargoContainer::CargoContainerGetInfo()
 {
     if( !LoadContents( m_factory ) )
     {

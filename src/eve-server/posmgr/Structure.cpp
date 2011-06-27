@@ -151,7 +151,7 @@ void Structure::ValidateAddItem(EVEItemFlags flag, InventoryItemRef item, Client
     }
 }
 
-PyObject *Structure::StructureGetInfo()
+PyDict *Structure::StructureGetInfo()
 {
     if( !LoadContents( m_factory ) )
     {

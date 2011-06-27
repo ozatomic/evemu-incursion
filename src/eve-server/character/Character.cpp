@@ -810,7 +810,7 @@ void Character::UpdateSkillQueue()
     SaveSkillQueue();
 }
 
-PyObject *Character::CharGetInfo() {
+PyDict *Character::CharGetInfo() {
     //TODO: verify that we are a char?
 
     if( !LoadContents( m_factory ) ) {

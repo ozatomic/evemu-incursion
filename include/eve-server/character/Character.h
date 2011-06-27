@@ -467,7 +467,7 @@ public:
 	/*
 	 * Primary public packet builders:
 	 */
-	PyObject *CharGetInfo();
+	PyDict *CharGetInfo();
 	PyObject *GetDescription() const;
 	/* GetSkillQueue()
 	 * 

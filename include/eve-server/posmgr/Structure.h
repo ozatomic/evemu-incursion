@@ -76,7 +76,7 @@ public:
 	/*
 	 * Primary public packet builders:
 	 */
-	PyObject *StructureGetInfo();
+	PyDict *StructureGetInfo();
 
 
 protected:

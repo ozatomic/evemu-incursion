@@ -156,16 +156,26 @@
   </elementDef>
 
   <elementDef name="Rsp_CommonGetInfo_Entry">
-    <listInline>
-      <int name="itemID" />
-      <!-- this is an ItemRow -->
-      <raw name="invItem" />
-      <!-- this maps effectType to EntityEffectState -->
-      <dictInt name="activeEffects" />
-      <!-- maps attribute ID to it's value, which may be int or real -->
-      <dictInt name="attributes" />
-      <long name="time" />
-    </listInline>
+      <objectInline>
+        <stringInline value="util.KeyVal" />
+        <dictInline>
+          <dictInlineEntry key="itemID">
+            <int name="itemID" />
+          </dictInlineEntry>
+          <dictInlineEntry key="attributes">
+            <dictInt name="attributes" />
+          </dictInlineEntry>
+          <dictInlineEntry key="invItem">
+            <raw name="invItem" />
+          </dictInlineEntry>
+          <dictInlineEntry key="time">
+            <long name="time" />
+          </dictInlineEntry>
+          <dictInlineEntry key="activeEffects">
+            <dictInt name="activeEffects" />
+          </dictInlineEntry>
+        </dictInline>
+      </objectInline>
   </elementDef>
 
   <elementDef name="Rsp_ItemGetInfo">
@@ -187,33 +197,15 @@
 	    </dictInline>
     </objectInline>
   </elementDef>
-
+  
+  <elementDef name="Rsp_ShipGetInfo">
+    <tupleInline>
+      <dictInt name="items"/>
+    </tupleInline>
+  </elementDef>
+  
   <elementDef name="Rsp_CommonGetInfo">
-    <objectInline>
-      <stringInline value="util.IndexRowset" />
-	    <dictInline>
-	      <dictInlineEntry key="header">
-		      <listInline>
-		        <stringInline value="itemID" />
-		        <stringInline value="invItem" />
-		        <stringInline value="activeEffects" />
-		        <stringInline value="attributes" />
-		        <stringInline value="time" />
-          </listInline>
-	      </dictInlineEntry>
-	      <dictInlineEntry key="RowClass">
-          <tokenInline value="util.Row" />
-	      </dictInlineEntry>
-	      <dictInlineEntry key="idName">
-		      <stringInline value="itemID" />
-	      </dictInlineEntry>
-	      <dictInlineEntry key="items">
-          <!-- For ShipGetInfo: contains a single Rsp_CommonGetInfo_Entry for the ship -->
-          <!-- For CharGetInfo: contains an Rsp_CommonGetInfo_Entry for the char and each of their skills (and implants?) -->
-		      <dictInt name="items" />
-	      </dictInlineEntry>
-	    </dictInline>
-    </objectInline>
+    <dictInt name="items"/>
   </elementDef>
 
   <elementDef name="NotifyOnItemChange">
